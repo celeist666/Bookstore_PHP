@@ -34,7 +34,7 @@ ini_set("display_errors", 1);
 								<a href="product.php?cat1=외국도서&cat2=영미도서&cat3=문학"><b>외국도서</b></a>
 								<ul class="sub_menu">
 									<li><a href="product.php?cat1=외국도서&cat2=영미도서&cat3=문학">영미도서</a></li>
-									<li><a href="product.php?cat1=외국도서&cat2=영미도서&cat3=엔터테인먼트">일본도서</a></li>
+									<li><a href="product.php?cat1=외국도서&cat2=일본도서&cat3=엔터테인먼트">일본도서</a></li>
 								</ul>
 							</li>
 							<li style="list-style: none"><span class="linedivide2"></span>

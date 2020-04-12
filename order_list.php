@@ -60,7 +60,7 @@
 				$pdo = new PDO('mysql:host=localhost;dbname=bookstore;
 charset=utf8', 'root', '4885');
 				$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-				$sql = 'select b.title, b.thumb, b.price, c.quantity, b.price * c.quantity as tot from book as b inner join (select book_no,quantity from orders where customer = "'.$_SESSION['id'].'") as c on b.no = c.book_no;';
+				$sql = 'select b.no, b.title, b.thumb, b.price, c.quantity, b.price * c.quantity as tot from book as b inner join (select book_no,quantity, date from orders where customer = "'.$_SESSION['id'].'") as c on b.no = c.book_no order by c.date desc;';
 				$stmt = $pdo->prepare($sql);
 				$stmt->execute();
 
@@ -71,7 +71,7 @@ charset=utf8', 'root', '4885');
 				    <img src='.$row['thumb'].' alt="IMG-PRODUCT">
 				    </div>
 				    </td>
-				    <td class="column-2">'.$row['title'].' </td>
+				    <td class="column-2"><a href="product-detail.php?no='.$row['no'].'">'.$row['title'].'"</a> </td>
 				    <td class="column-3">'.$row['price'].'원</td>
 				    <td class="column-4 p-l-70">'.$row['quantity'].'</td>
 				    <td class="column-5">'.$row['tot'].'원</td>
