@@ -1,6 +1,11 @@
+<?php
+error_reporting(E_ALL);
+
+ini_set("display_errors", 1);
+?>
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+<head>
 	<title>Product</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -53,7 +58,7 @@
 						</h3>
 						<ul class="p-b-30">
 							<li class="p-t-4">
-								<a href="product.php?cat=111" class="s-text13 active1">
+								<a href="product.php?cat1=국내도서&cat2=소설&cat3=한국소설" class="s-text13 active1">
 									한국소설
 								</a>
 							</li>
@@ -311,34 +316,52 @@
 						</ul>
 					</div>
 				</div>
-				<?php
-				 $cat1=$_GET['cat1'];
-				 $cat2=$_GET['cat2'];
-				 $cat3=$_GET['cat3'];
-				?>
 				<div class="col-sm-6 col-md-8 col-lg-9 p-b-50">
 					<!-- Product -->
 					<div class="row">
-						<div class="col-sm-12 col-md-6 col-lg-4 p-b-50">
-							<!-- Block2 -->
-							<div class="block2">
-								<div class="block2-img wrap-pic-w of-hidden pos-relative">
-									<img src="images/item-02.jpg" alt="IMG-PRODUCT">
-								</div>
+				<?php
+				$pdo = new PDO('mysql:host=localhost;dbname=bookstore;
+charset=utf8', 'root', '4885');
+			 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-								<div class="block2-txt p-t-20">
-									<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
-										Herschel supply co 25l
-									</a>
+				if (isset($_GET['search'])) {
+					// code...
+				}else {
+  				$sql = 'select * from book where cat1 = :cat1 and cat2 = :cat2 and cat3= :cat3 limit 30';
+  				$stmt = $pdo->prepare($sql);
+					$stmt->bindValue(':cat1', $_GET['cat1']);
+					$stmt->bindValue(':cat2', $_GET['cat2']);
+					$stmt->bindValue(':cat3', $_GET['cat3']);
+  				$stmt->execute();
 
-									<span class="block2-price m-text6 p-r-5">
-										$75.00
-									</span>
-								</div>
-							</div>
-						</div>
+					while($row = $stmt -> fetch()) {
+					    echo '
+								<div class="col-sm-12 col-md-6 col-lg-4 p-b-50">
+									<!-- Block2 -->
+									<div class="block2">
+										<div class="block2-img wrap-pic-w of-hidden pos-relative">
+											<img src="'.$row['thumb'].'" alt="IMG-PRODUCT">
+										</div>
+
+										<div class="block2-txt p-t-20">
+											<a href="product-detail.php&no='.$row['no'].'" class="block2-name dis-block s-text3 p-b-5">
+												'.$row['title'].'
+											</a>
+
+											<span class="block2-price m-text6 p-r-5">
+												'.$row['price'].'원
+											</span>
+										</div>
+									</div>
+								</div>';
+				}
+			}
+
+
+				?>
+
+
 					</div>
-
 					<!-- Pagination -->
 					<div class="pagination flex-m flex-w p-t-26">
 						<a href="#" class="item-pagination flex-c-m trans-0-4 active-pagination">1</a>
