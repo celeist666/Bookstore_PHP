@@ -18,22 +18,22 @@
       <h4 class="s-text12 p-b-30"><b>국내도서</b></h4>
       <ul>
         <li class="p-b-9">
-          <a class="s-text7" href="#">한국소설</a>
+          <a class="s-text7" href="product.php?cat1=국내도서&cat2=소설&cat3=한국소설">한국소설</a>
         </li>
         <li class="p-b-9">
-          <a class="s-text7" href="#">영미소설</a>
+          <a class="s-text7" href="product.php?cat1=국내도서&cat2=소설&cat3=영미소설">영미소설</a>
         </li>
         <li class="p-b-9">
-          <a class="s-text7" href="#">경영전략</a>
+          <a class="s-text7" href="product.php?cat1=국내도서&cat2=경제/경영&cat3=경영전략">경영전략</a>
         </li>
         <li class="p-b-9">
-          <a class="s-text7" href="#">경제일반</a>
+          <a class="s-text7" href="product.php?cat1=국내도서&cat2=경제/경영&cat3=경영일반" class="s-text13 active1">경제일반</a>
         </li>
         <li class="p-b-9">
-          <a class="s-text7" href="#">언론/신문/방송</a>
+          <a class="s-text7" href="product.php?cat1=국내도서&cat2=정치/사회&cat3=언론/신문/방송">언론/신문/방송</a>
         </li>
         <li class="p-b-9">
-          <a class="s-text7" href="#">국방군사</a>
+          <a class="s-text7" href="product.php?cat1=국내도서&cat2=정치/사회&cat3=국방/군사">국방군사</a>
         </li>
       </ul>
     </div>
@@ -41,10 +41,10 @@
       <h4 class="s-text12 p-b-30"><b>외국도서</b></h4>
       <ul>
         <li class="p-b-9">
-          <a class="s-text7" href="#">영미문학</a>
+          <a class="s-text7" href="product.php?cat1=외국도서&cat2=영미도서&cat3=문학">영미문학</a>
         </li>
         <li class="p-b-9">
-          <a class="s-text7" href="#">취미/실용/여행</a>
+          <a class="s-text7" href="product.php?cat1=외국도서&cat2=영미도서&cat3=취미/실용/여행">취미/실용/여행</a>
         </li>
         <li class="p-b-9">
           <a class="s-text7" href="#">생활/요리/건강</a>

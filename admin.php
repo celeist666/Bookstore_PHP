@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>꿈을 키우는 세상 - 인터넷교보문고</title>
+	<title>관리자 페이지</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -35,10 +35,13 @@
 
 	<!-- Header -->
 	<?php include 'header.php';?>
+	<script type="text/javascript">
+
+	</script>
 	<!-- Title Page -->
 	<section class="bg-title-page p-t-40 p-b-50 flex-col-c-m" style="background-image: url(images/order_list_banner.PNG);">
 		<h2 class="l-text2 t-center">
-			구매내역
+			관리자 페이지
 		</h2>
 	</section>
 
@@ -52,15 +55,15 @@
 						<tr class="table-head">
 							<th class="column-1"></th>
 							<th class="column-2">제목</th>
-							<th class="column-3">가격</th>
-							<th class="column-4 p-l-70">구매수량</th>
-							<th class="column-5">총액</th>
+							<th class="column-3">총액</th>
+							<th class="column-4 p-l-70">구매번호</th>
+							<th class="column-5"></th>
 						</tr>
 						<?php
 				$pdo = new PDO('mysql:host=localhost;dbname=bookstore;
 charset=utf8', 'root', '4885');
 				$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-				$sql = 'select b.title, b.thumb, b.price, c.quantity, b.price * c.quantity as tot from book as b inner join (select book_no,quantity from orders where customer = "'.$_SESSION['id'].'") as c on b.no = c.book_no;';
+				$sql = 'select *, o.quantity * b.price as tot from orders as o inner join book as b on o.book_no = b.no';
 				$stmt = $pdo->prepare($sql);
 				$stmt->execute();
 
@@ -72,9 +75,9 @@ charset=utf8', 'root', '4885');
 				    </div>
 				    </td>
 				    <td class="column-2">'.$row['title'].' </td>
-				    <td class="column-3">'.$row['price'].'원</td>
-				    <td class="column-4 p-l-70">'.$row['quantity'].'</td>
-				    <td class="column-5">'.$row['tot'].'원</td>
+				    <td class="column-3">'.$row['tot'].'원</td>
+				    <td class="column-4 p-l-70">'.$row['order_no'].'</td>
+				    <td class="column-5"><a href="deliver.php?order_no='.$row['order_no'].'"><button class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4" onclick="complete();">발송하기</button></a></td>
 				    </tr>';
 				}
 				?>

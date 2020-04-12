@@ -77,7 +77,7 @@
 				$pdo = new PDO('mysql:host=localhost;dbname=bookstore;
 charset=utf8', 'root', '4885');
 				$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-				$sql = 'select thumb, cat1, cat3 from book where no in (select book_no from(select book_no, sum(quantity) as s from orders group by book_no order by s desc limit 12) as b);';
+				$sql = 'select thumb, cat1, cat3, no from book where no in (select book_no from(select book_no, sum(quantity) as s from orders group by book_no order by s desc limit 12) as b);';
 				$stmt = $pdo->prepare($sql);
 				$stmt->execute();
 
@@ -85,12 +85,13 @@ charset=utf8', 'root', '4885');
 				    echo '<div class="col-xs-4 col-sm-4 col-md-3 col-lg-3 m-l-r-auto" style="padding: 0px 15px 0px 0px;">
 					<!-- block1 -->
 					<div class="block1 hov-img-zoom pos-relative m-b-30">
+					<a href="product-detail.php?no='.$row["no"].'">
 						<img alt="IMG-BENNER" src="';
 						echo $row["thumb"];
-						echo '" style="margin: 50px 0px 0px 0px;">
+						echo '" style="margin: 50px 0px 0px 0px;"></a>
 						<div class="block1-wrapbtn w-size2">
 							<!-- Button -->
-							<a class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4" href="#">';
+							<a class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4" href="product-detail.php?no='.$row["no"].'">';
 						echo $row["cat1"].'&#47;'.$row["cat3"].'</a>
 						</div>
 					</div>
