@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <link href="css/login.css" rel="stylesheet" type="text/css">
+  <meta charset="utf-8">
+  <title>로그인/회원가입</title>
+  <script>
+    function check_sign_up() {
+      var id = document.getElementById("id").value;
+      var pwd = document.getElementById("pwd").value;
+      var email = document.getElementById("email").value;
+      var address = document.getElementById("address").value;
+      var num = document.getElementById("num").value;
+
+      if (id && pwd && email && address && num) {
+        document.getElementById('create').removeAttribute('disabled');
+        alert("계정 만들기를 눌러주세요");
+      } else {
+        alert("빈칸없이 모든 칸을 입력해주세요");
+      }
+    }
+
+    function check_log_in() {
+      var id = document.getElementById("lid").value;
+      var pwd = document.getElementById("lpwd").value;
+
+      if (lid && lpwd ) {
+        document.getElementById('login').removeAttribute('disabled');
+        alert("'로그인 하기'를 눌러주세요");
+      } else {
+        alert("빈칸없이 모든 칸을 입력해주세요");
+      }
+    }
+
+  </script>
+</head>
+
+<body>
+  <div class="login-page">
+    <div class="form">
+      <form class="register-form" action="sign_up.php" method="post">
+        <input type="text" name="id" id="id" placeholder="ID" />
+        <input type="password" id="pwd" name="pwd" placeholder="Password" />
+        <input type="text" id="email" name="email" placeholder="Email" />
+        <input type="text" id="address" name="address" placeholder="주소" />
+        <input type="text" id="num" name="num" placeholder="핸드폰번호" />
+        <button type="button" onclick="check_sign_up();" name="button">체크하기</button>
+        <div class="" style="height:15px;"></div>
+        <button type="submit" id="create" disabled="true">계정 만들기</button>
+        <p class="message">이미 계정이 있으신가요? <a href="#">로그인 하기</a></p>
+      </form>
+
+      <form class="login-form" action="login.php" method="post">
+        <input type="text" id="lid" name="id" placeholder="ID" />
+        <input type="password" id="lpwd"name="pwd" placeholder="Password" />
+        <button type="button" onclick="check_log_in();" name="button">체크하기</button>
+        <div class="" style="height:15px;"></div>
+        <button type="submit" id="login" disabled="true">로그인 하기</button>
+        <p class="message">아직 계정이 없으신가요? <a href="#">계정 만들기</a></p>
+      </form>
+    </div>
+  </div>
+  <script src="vendor/jquery/jquery-3.2.1.min.js" type="text/javascript">
+  </script>
+  <!--===============================================================================================-->
+  <script src="js/login.js">
+  </script>
+</body>
+
+</html>
