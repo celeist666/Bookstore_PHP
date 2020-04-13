@@ -44,7 +44,8 @@ ini_set("display_errors", 1);
 							</li>
 						</ul>
 					</nav>
-				</div><!-- Header Icon -->
+				</div>
+				<!-- Header Icon -->
 				<div class="header-icons">
 					<!-- Search -->
 					<div class="header-wrapicon2">
@@ -53,8 +54,10 @@ ini_set("display_errors", 1);
 							<ul class="header-cart-wrapitem" style="margin:0px">
 								<li class="header-cart-item">
 									<div class="pos-relative bo11 of-hidden">
-										<input id="search" class="s-text7 p-l-23 p-r-50" name="search-product" placeholder="Search" style="width:85%; height: 32px;" type="text"> <button onclick="search();" class="flex-c-m size5 ab-r-m color1 color0-hov trans-0-4" style="background-color:white;"><i
-												aria-hidden="true" class="fs-13 fa fa-search"></i></button>
+										<input id="search" class="s-text7 p-l-23 p-r-50" name="search-product" placeholder="Search" style="width:85%; height: 32px;" type="text">
+										 <button onclick="search();" class="flex-c-m size5 ab-r-m color1 color0-hov trans-0-4" style="background-color:white;">
+											 <i aria-hidden="true" class="fs-13 fa fa-search"></i>
+										 </button>
 									</div>
 								</li>
 							</ul>
@@ -115,7 +118,9 @@ ini_set("display_errors", 1);
 								<li class="header-cart-item">
 									<div class="pos-relative bo11 of-hidden">
 										<input class="s-text7 p-l-23 p-r-50" name="search-product" placeholder="Search" style="width:85%; height: 32px;" type="text">
-										<button onclick="search(); class="flex-c-m size5 ab-r-m color1 color0-hov trans-0-4" style="background-color:white;"><i aria-hidden="true" class="fs-13 fa fa-search"></i></button>
+										<button onclick="search(); class="flex-c-m size5 ab-r-m color1 color0-hov trans-0-4" style="background-color:white;">
+											<i aria-hidden="true" class="fs-13 fa fa-search"></i>
+										</button>
 									</div>
 								</li>
 							</ul>
@@ -135,7 +140,8 @@ ini_set("display_errors", 1);
 					<span class="hamburger-box"><span class="hamburger-inner"></span></span>
 				</div>
 			</div>
-		</div><!-- Menu Mobile -->
+		</div>
+		<!-- Menu Mobile -->
 		<div class="wrap-side-menu">
 			<nav class="side-menu">
 				<ul class="main-menu">

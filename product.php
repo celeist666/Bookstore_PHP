@@ -322,6 +322,7 @@ ini_set("display_errors", 1);
 				<?php
 $pdo = new PDO('mysql:host=localhost;dbname=bookstore;
 charset=utf8', 'root', '4885');
+
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 if (isset($_GET['search']))
@@ -479,31 +480,7 @@ else
 	       });
 	</script> <!--===============================================================================================-->
 
-	<script src="vendor/noui/nouislider.min.js" type="text/javascript">
-	</script>
-	<script type="text/javascript">
-	       /*[ No ui ]
-	       ===========================================================*/
-	       var filterBar = document.getElementById('filter-bar');
-
-	       noUiSlider.create(filterBar, {
-	           start: [ 50, 200 ],
-	           connect: true,
-	           range: {
-	               'min': 50,
-	               'max': 200
-	           }
-	       });
-
-	       var skipValues = [
-	       document.getElementById('value-lower'),
-	       document.getElementById('value-upper')
-	       ];
-
-	       filterBar.noUiSlider.on('update', function( values, handle ) {
-	           skipValues[handle].innerHTML = Math.round(values[handle]) ;
-	       });
-	</script> <!--===============================================================================================-->
+	<!--===============================================================================================-->
 
 	<script src="js/main.js">
 	</script>

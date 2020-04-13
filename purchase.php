@@ -2,6 +2,7 @@
 session_start();
 $pdo = new PDO('mysql:host=localhost;dbname=bookstore;
 charset=utf8', 'root', '4885');
+
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 $sql = "INSERT INTO orders(book_no, quantity, customer) value(:no,:quantity,:customer)";

@@ -64,10 +64,12 @@
 						<div class="item">
 							<a href="product.php?cat1=국내도서&cat2=소설&cat3=한국소설"><img alt="3" src="images/index_banner_03.jpg" style="width:100%; margin:0px auto;"></a>
 						</div>
-					</div><!-- Left and right controls -->
+					</div>
+					<!-- Left and right controls -->
 					<a class="left carousel-control" data-slide="prev" href="#myCarousel" style="width: 50px;"><span class="glyphicon glyphicon-chevron-left"></span> <span class="sr-only">Previous</span></a> <a class="right carousel-control" data-slide="next"
 						href="#myCarousel" style="width: 50px;"><span class="glyphicon glyphicon-chevron-right"></span> <span class="sr-only">Next</span></a>
-				</div><img alt="banner_extra" class="col-xs-3 col-sm-3 col-md-3 col-lg-3" src="./images/main_extra.png" style="padding:0px;">
+				</div>
+				<img alt="banner_extra" class="col-xs-3 col-sm-3 col-md-3 col-lg-3" src="./images/main_extra.png" style="padding:0px;">
 				<div class="sec-title col-xs-12 col-sm-12 col-md-12 col-lg-12 m-l-r-auto" style="height:35px;"></div>
 				<div class="sec-title col-xs-12 col-sm-12 col-md-12 col-lg-12 m-l-r-auto">
 					<h2 class="m-text5 t-center">BEST SELLERS</h2>
@@ -75,7 +77,7 @@
 				<div class="sec-title col-xs-12 col-sm-12 col-md-12 col-lg-12 m-l-r-auto" style="height:55px;"></div>
 				<?php
 				$pdo = new PDO('mysql:host=localhost;dbname=bookstore;
-charset=utf8', 'root', '4885');
+				charset=utf8', 'root', '4885');
 				$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 				$sql = 'select thumb, cat1, cat3, no from book where no in (select book_no from(select book_no, sum(quantity) as s from orders group by book_no order by s desc limit 12) as b);';
 				$stmt = $pdo->prepare($sql);

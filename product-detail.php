@@ -55,8 +55,9 @@
 	<?php
 $pdo = new PDO('mysql:host=localhost;dbname=bookstore;
 charset=utf8', 'root', '4885');
+
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$sql = 'select * from book where no= :no limit 100';
+$sql = 'select * from book where no= :no';
     $stmt = $pdo->prepare($sql);
     $stmt->bindValue(':no', $_GET['no']);
     $stmt->execute();
@@ -83,12 +84,9 @@ $sql = 'select * from book where no= :no limit 100';
 				<h5 class="product-detail-name m-text16 p-b-13" id="b_title">
 					<?= $row['title']?>
 				</h5>
-
-
-
 				<!--  -->
 				<div class="p-t-33 p-b-60">
-<span class="m-text14">
+					<span class="m-text14">
 					<?= $row['price']?>원
 				</span>
 					<div class="flex-r-m flex-w p-t-150">
@@ -199,21 +197,21 @@ $sql = 'select * from book where no= :no limit 100';
 		$('.block2-btn-addcart').each(function(){
 			var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
 			$(this).on('click', function(){
-				swal(nameProduct, "is added to cart !", "success");
+				swal(nameProduct, "을 구매하셨습니다 !!", "success");
 			});
 		});
 
 		$('.block2-btn-addwishlist').each(function(){
 			var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
 			$(this).on('click', function(){
-				swal(nameProduct, "is added to wishlist !", "success");
+				swal(nameProduct, "을 구매하셨습니다 !!", "success");
 			});
 		});
 
 		$('.btn-addcart-product-detail').each(function(){
 			var nameProduct = $('.product-detail-name').html();
 			$(this).on('click', function(){
-				swal(nameProduct, "is added to wishlist !", "success");
+				swal(nameProduct, "을 구매하셨습니다 !!", "success");
 			});
 		});
 	</script>

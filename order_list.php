@@ -59,6 +59,7 @@
 						<?php
 				$pdo = new PDO('mysql:host=localhost;dbname=bookstore;
 charset=utf8', 'root', '4885');
+
 				$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 				$sql = 'select b.no, b.title, b.thumb, b.price, c.quantity, b.price * c.quantity as tot from book as b inner join (select book_no,quantity, date from orders where customer = "'.$_SESSION['id'].'") as c on b.no = c.book_no order by c.date desc;';
 				$stmt = $pdo->prepare($sql);
