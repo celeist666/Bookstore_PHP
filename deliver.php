@@ -14,5 +14,5 @@ $stmt->execute();
  ?>
 <script type="text/javascript">
   alert("<?php echo $_GET['order_no'].'번 주문을 배송처리하였습니다'  ?>");
-  location.href="admin_order_list.php"
+  location.href="admin.php"
 </script>
