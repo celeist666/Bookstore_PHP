@@ -56,13 +56,13 @@
 					<!-- Wrapper for slides -->
 					<div class="carousel-inner">
 						<div class="item active">
-							<a href="#"><img alt="1" src="images/index_banner_01.jpg" style="width:100%; margin:0px auto;"></a>
+							<a href="product.php?cat1=국내도서&cat2=경제/경영&cat3=경영일반"><img alt="1" src="images/index_banner_01.jpg" style="width:100%; margin:0px auto;"></a>
 						</div>
 						<div class="item">
-							<a href="#"><img alt="2" src="images/index_banner_02.jpg" style="width:100%; margin:0px auto;"></a>
+							<a href="product.php?cat1=국내도서&cat2=정치/사회&cat3=정치/외교"><img alt="2" src="images/index_banner_02.jpg" style="width:100%; margin:0px auto;"></a>
 						</div>
 						<div class="item">
-							<a href="#"><img alt="3" src="images/index_banner_03.jpg" style="width:100%; margin:0px auto;"></a>
+							<a href="product.php?cat1=국내도서&cat2=소설&cat3=한국소설"><img alt="3" src="images/index_banner_03.jpg" style="width:100%; margin:0px auto;"></a>
 						</div>
 					</div><!-- Left and right controls -->
 					<a class="left carousel-control" data-slide="prev" href="#myCarousel" style="width: 50px;"><span class="glyphicon glyphicon-chevron-left"></span> <span class="sr-only">Previous</span></a> <a class="right carousel-control" data-slide="next"
