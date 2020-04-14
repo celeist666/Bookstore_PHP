@@ -1,4 +1,4 @@
-<?php
+<?php 
 session_start();
 $pdo = new PDO('mysql:host=localhost;dbname=bookstore;
 charset=utf8', 'root', '4885');
