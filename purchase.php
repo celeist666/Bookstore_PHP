@@ -12,7 +12,7 @@ $stmt->bindValue(':no', $_GET['no']);
 $stmt->bindValue(':quantity', $_GET['quantity']);
 $stmt->bindValue(':customer', $_SESSION['id']);
 $stmt->execute();
-
+ 
  ?>
 <script type="text/javascript">
   alert("<?php echo $_SESSION['id'].'님, '.$_GET['title'].'을 '.$_GET['quantity'].'권 구매하셨습니다.'  ?>");
