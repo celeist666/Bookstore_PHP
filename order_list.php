@@ -55,7 +55,7 @@
 							<th class="column-3">가격</th>
 							<th class="column-4 p-l-70">구매수량</th>
 							<th class="column-5">총액</th>
-						</tr> 
+						</tr>
 						<?php
 				$pdo = new PDO('mysql:host=localhost;dbname=bookstore;
 charset=utf8', 'root', '4885');
